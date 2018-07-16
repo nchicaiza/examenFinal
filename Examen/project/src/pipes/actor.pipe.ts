@@ -7,18 +7,18 @@ export class ActorPipe implements PipeTransform{
     constructor (private readonly _schema){
     }
 
-    transform(jsonValidarEstudiante: any, metadata: ArgumentMetadata){
-        const  {error}= Joi.validate(jsonValidarEstudiante, this._schema);
+    transform(jsonValidarActor: any, metadata: ArgumentMetadata){
+        const  {error}= Joi.validate(jsonValidarActor, this._schema);
         if(error){
             throw  new PeticionIncorrectaException(
                 {
                     erorr: error,
-                    mensaje: 'Json de Estudiante no valido',
+                    mensaje: 'Json de Actor no valido',
                 },
                 10
             )
         }else{
-            return jsonValidarEstudiante;
+            return jsonValidarActor;
         }
 
     }

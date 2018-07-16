@@ -1,7 +1,7 @@
 import {Body, Controller, Get, HttpStatus, Param, Post, Put, Req, Res} from "@nestjs/common";
-import {Materia, PeliculaService} from "./pelicula.service";
+import { Pelicula, PeliculaService} from "./pelicula.service";
 import {PeliculaPipe} from "../pipes/pelicula.pipe";
-import {MATERIA_SCHEMA} from "./pelicula.schema";
+import { PELICULA_SCHEMA} from "./pelicula.schema";
 
 @Controller('Pelicula')
 export class PeliculaController {
@@ -36,14 +36,16 @@ export class PeliculaController {
         return response.status(202).send('Peliculas Creadas');
     }
 
-    @Get('mostrarMateria')
-    listarTodosLasMaterias(@Res () response, @Req () request){
-        var promise = Promise.resolve(this.materiaService.listarMateria())
+    @Get('mostrarPelicula')
+    listarTodosLasPeliculas(
+        @Res () response,
+        @Req () request){
+        var promise = Promise.resolve(this.peliculaService.listarPeliculas())
 
         promise.then(function (value) {
             if(value.length === 0){
                 return response.send({
-                    mensaje:'No existe ninguna Materia',
+                    mensaje:'No existe ninguna Pelicula',
                     estado: HttpStatus.NOT_FOUND + ' Not found',
                 });
             }
@@ -55,14 +57,17 @@ export class PeliculaController {
 
 
     @Get('/:id')
-    mostrarUnMateria(@Res () response, @Req () request, @Param() params){
-        let arregloMateria = this.materiaService.obtenerUno(params.id);
-        if(arregloMateria){
-            return response.send(arregloMateria);
+    mostrarUnaPelicula(
+        @Res () response,
+        @Req () request,
+        @Param() params){
+        let arregloPelicula = this.peliculaService.obtenerUno(params.id);
+        if(arregloPelicula){
+            return response.send(arregloPelicula);
         } else{
-            console.log('no encontrado');
+            console.log('no encontrada');
             return response.status(400).send({
-                mensaje:'Materia no encontrado',
+                mensaje:'Pelicula no encontrada',
                 estado:HttpStatus.NOT_FOUND + ' Not found',
                 URL:request.originalUrl,
             });
@@ -70,24 +75,28 @@ export class PeliculaController {
     }
 
     @Put('/:id')
-    modificarMateria(@Res () response, @Req () request, @Param() params, @Body(new PeliculaPipe(MATERIA_SCHEMA)) body){
-        let arregloMateria = this.materiaService.obtenerUno(params.id);
-        if(arregloMateria){
+    modificarPelicula(
+        @Res () response,
+        @Req () request,
+        @Param() params,
+        @Body(new PeliculaPipe(PELICULA_SCHEMA)) body){
+        let arregloPelicula = this.peliculaService.obtenerUno(params.id);
+        if(arregloPelicula){
             return response.send(
-                this.materiaService.editarUno(
+                this.peliculaService.editarUno(
                     params.id,
-                    body.codigo,
+                    body.idPelicula,
                     body.nombre,
-                    body.descripcion,
-                    body.activo,
-                    body.fechaCreacion,
-                    body.numeroHorasSemana,
-                    body.urlFotoMateria,
-                    body.materiaId,
+                    body.anioLanzamiento,
+                    body.rating,
+                    body.actoresPrincipales,
+                    body.actorId,
+                    body.urlFotoPelicula,
+
                 ));
         } else{
             return response.send({
-                mensaje:'Materia no encontrado. No se puede modificar',
+                mensaje:'Pelicula no encontrado. No se puede modificar',
                 estado:HttpStatus.NOT_FOUND + ' Not found',
                 url:request.path,
             });

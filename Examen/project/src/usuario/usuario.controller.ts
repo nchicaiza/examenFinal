@@ -1,10 +1,9 @@
 import {Body, Controller, Get, HttpStatus, Post, Req, Res} from "@nestjs/common";
 import {Usuario, UsuarioService} from "./usuario.service";
 import {ActorPipe} from "../pipes/actor.pipe";
-import {ESTUDIANTE_SCHEMA} from "../actor/actor.schema";
 import {UsuarioPipe} from "../pipes/usuario.pipe";
 import {USUARIO_SCHEMA} from "./usuario.schema";
-import {Estudiante} from "../actor/actor.service";
+
 
 @Controller('Usuario')
 export class UsuarioController {
@@ -14,7 +13,9 @@ export class UsuarioController {
     }
 
     @Get('mostrarUsuarios')
-    listarUsuarios(@Res () response, @Req () request){
+    listarUsuarios(
+        @Res () response,
+        @Req () request){
         var promise = Promise.resolve(this.usuarioService.findAll());
         promise.then(function (value) {
             if(value.length === 0){
@@ -29,7 +30,9 @@ export class UsuarioController {
     }
 
     @Get('crearUsuarios')
-    registrarAllUser(@Res () response, @Req () request){
+    registrarAllUser(
+        @Res () response,
+        @Req () request){
         this.usuarioService.crearTodosUsuarios();
         return response.status(202).send('Usuarios Creados');
     }

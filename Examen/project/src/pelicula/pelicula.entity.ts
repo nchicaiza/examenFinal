@@ -14,10 +14,12 @@ export class PeliculaEntity {
     rating:number
     @Column()
     actoresPrincipales:string
-    @Column()
-    actorId:number;
+    //@Column()
+    //actorId:number;
     @Column()
     urlFotoPelicula: string;
+    @Column()
+    actorIdIdActor:number;
 
     @ManyToOne(
         type => ActorEntity,

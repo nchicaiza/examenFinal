@@ -83,7 +83,7 @@ export  class ActorController {
         if(arregloActor) {
             return response.send(
                 this.actorService.editarUno(
-                    params.id_estudiante,
+                    params.id_actor,
                     body.nombres,
                     body.apellidos,
                     body.fechaNacimiento,

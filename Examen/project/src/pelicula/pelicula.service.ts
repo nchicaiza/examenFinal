@@ -18,60 +18,63 @@ export class PeliculaService {
     async  listarPeliculas(): Promise<PeliculaEntity[]>{
         return (await this.peliculaRepository.find());
     }
-
     crearPelicula(pelicula: Pelicula){
         const pel = new PeliculaEntity();
 
        pel.idPelicula = pelicula.idPelicula;
        pel.nombre = pelicula.nombre;
+       pel.anioLanzamiento = pelicula.anioLanzamiento;
+       pel.rating = pelicula.rating;
+       pel.actoresPrincipales = pelicula.actoresPrincipales;
+       pel.actorId = pelicula.actorIdIdActor;
+       pel.urlFotoPelicula = pelicula.urlFotoPelicula;
 
-
-        this.materiaRepository.save(mat);
+        this.peliculaRepository.save(pel);
     }
 
-    crearTodosMaterias(){
+    crearTodasPeliculas(){
         for (var indice in PeliculaData){
-            const mat = new PeliculaEntity();
-            mat.codigo = PeliculaData[indice].codigo;
-            mat.nombre = PeliculaData[indice].nombre;
-            mat.descripcion = PeliculaData[indice].descripcion;
-            mat.activo = PeliculaData[indice].activo;
-            mat.fechaCreacion = new Date(PeliculaData[indice].fechaCreacion);
-            mat.urlFotoMateria = PeliculaData[indice].urlFotoMateria;
-            mat.numeroHorasSemana = parseInt(PeliculaData[indice].numeroHorasSemana);
-            mat.estudianteId = parseInt(PeliculaData[indice].estudianteIdIdEstudiante);
+            const pel = new PeliculaEntity();
+            pel.idPelicula = PeliculaData[indice].idPelicula;
+            pel.nombre = PeliculaData[indice].nombre;
+            pel.anioLanzamiento = PeliculaData[indice].anioLanzamiento;
+            pel.rating = PeliculaData[indice].rating;
+            pel.actoresPrincipales = PeliculaData[indice].actoresPrincipales;
+            pel.actorId = PeliculaData[indice].actorId;
+            pel.urlFotoPelicula = PeliculaData[indice].urlFotoPelicula;
+            pel.actorIdIdActor = PeliculaData[indice].actorIdIdActor;
 
-            this.materiaRepository.save(mat);
+            this.peliculaRepository.save(pel);
         }
     }
 
     //Metodo obtener un medicamento
-    obtenerUno(materiaID){
+    obtenerUno(peliculaID){
 
-        console.log(this.materias[materiaID]);
-        return this.materias[materiaID];
+        console.log(this.peliculas[peliculaID]);
+        return this.peliculas[peliculaID];
     }
 
     //Metodo editar un medicamento
-    editarUno(materiaID, codigo, nombre, descripcion, activo, fechaCreacion, numeroHorasSemana,urlFotoMateria, estudianteId){
-        let materiaActualizado = this.obtenerUno(materiaID);
+    editarUno(peliculaID, idPelicula, nombre, anioLanzamiento, rating, actoresPrincipales, actorId,urlFotoPelicula){
+        let peliculaActualizada = this.obtenerUno(peliculaID);
 
-        materiaActualizado.codigo = codigo;
-        materiaActualizado.nombre = nombre;
-        materiaActualizado.descripcion = descripcion;
-        materiaActualizado.activo = activo;
-        materiaActualizado.fechaCreacion = fechaCreacion;
-        materiaActualizado.numeroHorasSemana = numeroHorasSemana;
-        materiaActualizado.urlFotoMateria = urlFotoMateria;
-        materiaActualizado.estudianteIdIdEstudiante = estudianteId;
+        peliculaActualizada.idPelicula = idPelicula;
+        peliculaActualizada.nombre = nombre;
+        peliculaActualizada.anioLanzamiento = anioLanzamiento;
+        peliculaActualizada.rating = rating;
+        peliculaActualizada.actoresPrincipales = actoresPrincipales;
+        peliculaActualizada.actorId = actorId;
+        peliculaActualizada.urlFotoPelicula = urlFotoPelicula;
+        peliculaActualizada.actorIdIdActor = actorId;
 
-        return materiaActualizado;
+        return peliculaActualizada;
     }
 
 }
 
 
-export class Materia {
+export class Pelicula {
     constructor(
         public idPelicula:number,
         public nombre:string,

@@ -5,19 +5,19 @@ import * as Joi from 'joi';
 export class PeliculaPipe implements PipeTransform{
     constructor (private readonly _schema){
     }
-    transform(jsonValidarMedicamento: any, metadata: ArgumentMetadata){
-        const  {error}= Joi.validate(jsonValidarMedicamento, this._schema)
+    transform(jsonValidarPelicula: any, metadata: ArgumentMetadata){
+        const  {error}= Joi.validate(jsonValidarPelicula, this._schema)
         if(error){
             //botar un error
             throw  new PeticionIncorrectaException(
                 {
                     erorr: error,
-                    mensaje: 'Json de Materia no valido',
+                    mensaje: 'Json de Pelicula no valido',
                 },
                 10
             )
         } else{
-            return jsonValidarMedicamento;
+            return jsonValidarPelicula;
         }
     }
 }

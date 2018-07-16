@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import {EstudianteController} from "./actor/actor.controller";
+import {ActorController} from "./actor/actor.controller";
 import {PeliculaController} from "./pelicula/pelicula.controller";
 import {AutorizacionController} from "./controladores/autorizacion.controller";
 import {ActorService} from "./actor/actor.service";
@@ -31,7 +31,7 @@ import {UsuarioController} from "./usuario/usuario.controller";
           PeliculaEntity,
       ]),
   ],
-  controllers: [AppController, EstudianteController, PeliculaController, AutorizacionController, UsuarioController],
+  controllers: [AppController, ActorController, PeliculaController, AutorizacionController, UsuarioController],
   providers: [AppService, ActorService, PeliculaService, UsuarioService],
 })
 export class AppModule {}

@@ -1,13 +1,14 @@
 import * as Joi from 'joi';
-export const MATERIA_SCHEMA = Joi
+
+export const PELICULA_SCHEMA = Joi
     .object()
     .keys({
-        codigo:Joi.number().precision(2).required(),
+        idPelicula:Joi.number().precision(2).required(),
         nombre: Joi.string().regex(/^[a-zA-Z.,' ' ]{4,30}$/).required(),
-        descripcion:Joi.string().regex(/^[a-zA-Z0-9 ]{4,30}$/).required(),
-        activo:Joi.string().regex(/^[a-zA-Z,.' ' ]{4,50}$/).required(),
-        fechaCreacion:Joi.date().required(),
-        numeroHorasSemana:Joi.number().integer().required(),
-        urlFotoMateria:Joi.string().regex(/^[a-zA-Z0-9 ]{4,300}$/).required(),
-        estudianteIdIdEstudiante:Joi.number().integer().required(),
+        anioLanzamiento:Joi.number().integer().required(),
+        rating:Joi.string().regex(/^[a-zA-Z,.' ' ]{4,50}$/).required(),
+        actoresPrincipales:Joi.string().regex(/^[a-zA-Z.,' ' ]{4,30}$/).required(),
+        actorId:Joi.number().integer().required(),
+        urlFotoPelicula:Joi.string().regex(/^[a-zA-Z0-9 ]{4,300}$/).required(),
+        actorIdIdActor:Joi.number().integer().required(),
     });

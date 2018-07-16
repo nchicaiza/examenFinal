@@ -3,7 +3,6 @@ import {InjectConnection, InjectEntityManager, InjectRepository} from "@nestjs/t
 import {Connection, EntityManager, Repository} from "typeorm";
 import {UsuarioEntity} from "./usuario.entity";
 import {UsuarioData} from "./usuario.data";
-import {Estudiante} from "../actor/actor.service";
 
 @Injectable()
 export class UsuarioService {

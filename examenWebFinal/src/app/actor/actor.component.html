@@ -6,31 +6,49 @@
 
   <div class="col-sm-12" align="center">
     <br>
-    <p class="h3">PETICION DE TRANSFERENCIA</p>
+    <p class="titulo1">PETICION DE TRANSFERENCIA</p>
   </div>
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
+  <div class="row">
+  <div class="col-sm-5">
     <div class="card">
       <div class="card-header">
-        Nombre Actor: {{actor[0].nombres}}
+        <h1>Usuario</h1>
       </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-5">
+            <img class="img-fluid" src="https://i1.wp.com/www.cullar.es/wp-content/uploads/2017/06/simbolo-de-usuario-negro-macho_318-60703.jpg" alt="No disponible">
+          </div>
+          <div class="col-sm-7">
+            <h5 class="card-title"> Usuario: nelson.chicaiza@epn.edu.ec </h5>
+            <p class="card-text"></p>
+            <p class="card-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2">
+
+  </div>
+
+  <div class="col-sm-5">
+    <div class="card">
+      <div class="card-header">Actor</div>
       <div class="card-body">
         <div class="row">
           <div class="col-sm-5">
             <img class="img-fluid" [src]=actor[0].urlFotoActor alt="No disponible">
           </div>
           <div class="col-sm-7">
-            <h5 class="card-title"> Fecha Nacimiento: {{actor[0].fechaNacimiento}} </h5>
-            <p class="card-text"> Mejor Pelicula : {{actor[0].peliculaActual}}</p>
-            <p class="card-text"> Jubilado: {{actor[0].jubilado}}</p>
+            <h5 class="card-title">Nombre Actor: {{actor[0].nombres}} {{actor[0].apellidos}} </h5>
+            <p class="card-text">Semestre Referencial: {{estudiante[0].semestreActual}}</p>
+            <p class="card-text">Graduado: {{estudiante[0].graduado}}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-3"></div>
-
-  <div class="col-sm-12" ><br></div>
 
 
   <div class="col-sm-12">

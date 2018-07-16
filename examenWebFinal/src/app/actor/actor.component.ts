@@ -22,7 +22,7 @@ export class ActorComponent implements OnInit {
   cargarPelicula(){
     this._activetedRoute.params.subscribe(parametros=>{
       this._parametros=parametros;
-      this._httpCient.get('http://localhost:3000/materia/mostrarMateria?estudianteIdIdEstudiante='+this._parametros.idequipo)
+      this._httpCient.get('http://localhost:3000/pelicula/mostrarMateria?estudianteIdIdEstudiante='+this._parametros.idequipo)
         .subscribe(
           (res)=>{
             this.pelicula=res;

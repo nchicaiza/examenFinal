@@ -4,28 +4,16 @@ import {ActorPipe} from "../pipes/actor.pipe";
 import {Actor, ActorService} from "./actor.service";
 
 
-@Controller('Autor')
+@Controller('Actor')
 export class ActorController {
 
     constructor(private _actorService: ActorService){
 
     }
 
-    @Get()
-    listarTodos(@Res () response, @Req () request){
 
-        var arregloActores = this._actorService.listarTodos();
-        if (Object.keys(arregloActores).length === 0){
-            return response.send({
-                mensaje:'No existe ningun Actor',
-                estado: HttpStatus.NOT_FOUND,
-            });
-        } else{
-            return response.status(202).send(arregloActores);
-        }
-    }
 
-    @Post()
+    @Post('registrar')
     crearActor(@Body(new ActorPipe(ACTOR_SCHEMA)) bodyParams) {
         const actorNuevo = new Actor(
             bodyParams.id,
@@ -34,42 +22,74 @@ export class ActorController {
             bodyParams.fechaNacimiento,
             bodyParams.numeroPeliculas,
             bodyParams.retirado,
+            bodyParams.urlFotoActor,
+            bodyParams.usuarioFKIdUsuario,
         );
         return this._actorService.crearActor(actorNuevo);
     }
 
-    @Get('/:id')
-    obtenerUno(@Res () response, @Req () request, @Param() paramParams){
+    @Get('crearActor')
+    registrarAllActor(@Res () response, @Req () request){
+        this._actorService.crearTodosActores()
+        return response.status(202).send('Actores Creados');
+    }
 
-        const actor = this._actorService.obtenerUno(paramParams.id);
-        if (actor){
-            return response.send(actor);
-        }
-        else {
+    @Get('mostrarActor')
+    listarTodosLosActores(@Res () response, @Req () request){
+        var promise = Promise.resolve(this._actorService.listarActor());
+        promise.then(function (value) {
+            if(value.length === 0){
+                return response.send({
+                    mensaje:'No existe ningun actor',
+                    estado: HttpStatus.NOT_FOUND + ' Not found',
+                });
+            }
+            else{
+                return response.status(202).send(value);
+            }
+        });
+    }
+
+    @Get('/:id')
+    mostrarActor(@Res () response, @Req () request, @Param() params){
+
+        let arregloActor = this._actorService.obtenerUno(params.id);
+        if(arregloActor){
+            return response.send(arregloActor);
+        } else{
+            console.log('no encontrado');
             return response.status(400).send({
-                mensaje:'Actor no Existe',
-                statusCode: HttpStatus.NOT_FOUND,
+                mensaje:'Actor no encontrado',
+                estado:HttpStatus.NOT_FOUND + ' Not found',
+                URL:request.originalUrl,
             });
         }
+
     }
 
     @Put('/:id')
-    editarUno(@Res () response, @Req () request, @Param() paramParams,
-              @Body(new ActorPipe(ACTOR_SCHEMA)) bodyParams){
-        if (this._actorService.obtenerUno(paramParams.id)) {
-            const actor = this._actorService.editarUno(paramParams.id,
-                bodyParams.nombres,
-                bodyParams.apellidos,
-                bodyParams.fechaNacimiento,
-                bodyParams.numeroPeliculas,
-                bodyParams.retirado);
-            return response.send(actor);
-        }
-        else {
-            return response.status(400).send({
-                mensaje: 'Actor no existe',
-                statusCode: HttpStatus.NOT_FOUND,
-                });
+    modificarActor(@Res () response, @Req () request, @Param() paramParams,
+                   @Body(new ActorPipe(ACTOR_SCHEMA)) bodyParams){
+        let arregloActor = this._actorService.obtenerUno(paramParams.id);
+
+        if (arregloActor) {
+            return response.send(
+                this._actorService.editarUno(
+                    paramParams.id,
+                    bodyParams.nombres,
+                    bodyParams.apellidos,
+                    bodyParams.fechaNacimiento,
+                    bodyParams.numeroPeliculas,
+                    bodyParams.retirado,
+                    bodyParams.urlFotoActor
+                ));
+        } else {
+            return response.send({
+                mensaje:'Actor no encontrado. No se puede modificar',
+                estado:HttpStatus.NOT_FOUND + ' Not found',
+                url:request.path,
+                //headers: request.headers,
+            });
         }
     }
 

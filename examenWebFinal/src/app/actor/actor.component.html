@@ -45,9 +45,9 @@
               <div class="card-body">
                 <h5 class="card-title" style="text-align: center">{{pelicula.codigo}} </h5>
                 <p class="card-text">Nombre: {{pelicula.nombre}}</p>
-                <p class="card-text">Horas a la Semana: {{materia.numeroHorasSemana}}</p>
-                <p class="card-text">Descripcion: {{materia.descripcion}}</p>
-                <a href="#" [routerLink]="['/estudiante',materia.id_materia,'materia',materia.id_materia]" class="btn btn-primary"> Transferencia</a>
+                <p class="card-text">Rating: {{pelicula.rating}}</p>
+                <p class="card-text">Sinopsis: {{pelicula.sinopsis}}</p>
+                <a href="#" [routerLink]="['/actor',pelicula.id_pelicula,'pelicula',pelicula.id_pelicula]" class="btn btn-primary"> Transferencia</a>
               </div>
             </div>
 

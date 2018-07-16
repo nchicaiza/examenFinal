@@ -7,4 +7,6 @@ export  const ACTOR_SCHEMA = Joi.object().keys({
     fechaNacimiento: Joi.date(),
     numeroPeliculas: Joi.number().min(0),
     retirado: Joi.boolean(),
+    urlFotoActor: Joi.string(),
+    usuarioFKIdUsuario: Joi.number().integer().required(),
 });

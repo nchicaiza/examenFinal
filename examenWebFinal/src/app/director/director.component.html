@@ -1,3 +1,82 @@
-<p>
-  director works!
-</p>
+<div class="row">
+
+  <div class="col-sm-12">
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+  <div class="col-sm-12" align="center">
+    <br>
+    <p class="h3">SELECCION DE TRANSFERENCIA</p>
+  </div>
+  <div class="col-sm-3"></div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 align="center">Actor</h2>
+      <div class="card">
+        <div class="card-header">
+          Nombre Actor: {{actor[0].nombres}}
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-5">
+              <img class="img-fluid" [src]=actor[0].urlFotoActor alt="No disponible">
+            </div>
+            <div class="col-sm-7">
+              <h5 class="card-title">Fecha Nacimiento: {{actor[0].fechaNacimiento}} </h5>
+              <p class="card-text"> Mejor Pelicula : {{actor[0].peliculaActual}}</p>
+              <p class="card-text"> Jubilado: {{actor[0].jubilado}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <h2 align="center">Item de Peticion</h2>
+      <div class="card">
+        <div class="card-header">
+          Pelicula: {{pelicula[0].nombre}}
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-5">
+              <img class="img-fluid" [src]=pelicula[0].urlFotoPelicula alt="No disponible">
+            </div>
+            <div class="col-sm-7">
+              <h5 class="card-title">Rating: {{pelicula[0].rating}} </h5>
+              <p class="card-text">Sinopsis: {{pelicula[0].sinopsis}}</p>
+              <p class="card-text">Anio Lanzamiento: {{pelicula[0].anioLanzamiento}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+
+  <div class="col-sm-12" ><br></div>
+
+
+  <div class="col-sm-12">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h3>Materias:</h3>
+        <hr class="my-4">
+        <div class="row">
+          <div class="col-sm-3" *ngFor="let pelicula of pelicula">
+            <div class="card">
+              <div align="center"><img class="card-img-top img-fluid" [src]=pelicula.urlFotoPelicula alt="Imagen Pelicula"></div>
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center">{{pelicula.codigo}} </h5>
+                <p class="card-text">Nombre: {{pelicula.nombre}}</p>
+                <p class="card-text">rating: {{pelicula.rating}}</p>
+                <p class="card-text">Sinopsis: {{pelicula.sinopsis}}</p>
+                <a href="#" [routerLink]="['/transferencias']">Transferencia</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

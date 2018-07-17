@@ -1,4 +1,14 @@
 export const PeliculaData = [
-    {'idPelicula':500,'nombre':'Ibuprofeno','anioLanzamiento': 2012,'rating':65,'actoresPrincipales':'2018-08-08','actorId':1,'urlFotoPelicula':'','actorIdIdActor':1},
+    {'idPelicula':100,'nombre':'Avatar','anioLanzamiento': 2012,'rating':100,'actoresPrincipales':'Juan y Gaby','actorId':1,'urlFotoPelicula':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUWrPpeCTMB7i7Kfsaeo_RqyvGR0VUWIQ0DHHjZQcACv_mzUtJow','actorIdIdActor':1},
+    {'idPelicula':110,'nombre':'Wall-e','anioLanzamiento': 2010,'rating':95,'actoresPrincipales':'Walle y Eva','actorId':4,'urlFotoPelicula':'https://steamcdn-a.akamaihd.net/steam/apps/331750/header.jpg?t=1491255017','actorIdIdActor':2},
+    {'idPelicula':120,'nombre':'Nemo','anioLanzamiento': 2005,'rating':80,'actoresPrincipales':'Dori, Nemo y Marlin','actorId':2,'urlFotoPelicula':'https://steamcdn-a.akamaihd.net/steam/apps/331450/header.jpg?t=1488435477','actorIdIdActor':3},
+    {'idPelicula':130,'nombre':'Zootopia','anioLanzamiento': 2016,'rating':88,'actoresPrincipales':'Judith y Nick','actorId':3,'urlFotoPelicula':'https://lumiere-a.akamaihd.net/v1/images/movie_poster_zootopia_866a1bf2.jpeg?region=0%2C0%2C300%2C450','actorIdIdActor':4},
+    {'idPelicula':140,'nombre':'Hermano Oso','anioLanzamiento': 2008,'rating':95,'actoresPrincipales':'Juan y omar','actorId':5,'urlFotoPelicula':'https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201701/24/00125940209627____6__640x640.jpg','actorIdIdActor':1},
+    {'idPelicula':150,'nombre':'Coco','anioLanzamiento': 2018,'rating':100,'actoresPrincipales':'Miguel y Hector','actorId':7,'urlFotoPelicula':'https://www.eluniverso.com/sites/default/files/styles/powgallery_800/public/fotos/2017/10/coco.jpg?itok=gKNfrSPX','actorIdIdActor':2},
+    {'idPelicula':160,'nombre':'Sreck','anioLanzamiento': 2005,'rating':90,'actoresPrincipales':'sreck y fiona','actorId':9,'urlFotoPelicula':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9O473orA6NznUy1hT3rMgGXjAiyfTtxnJP1C-5oynFhT0bKM','actorIdIdActor':3},
+    {'idPelicula':170,'nombre':'edad del Hielo','anioLanzamiento': 2005,'rating':95,'actoresPrincipales':'varios','actorId':6,'urlFotoPelicula':'https://www.menudospeques.net/images/plg_jdvthumbs/xthumb-cat-cartel-2-210b13d68063ca71f9b02d617f3e214e.jpeg.pagespeed.ic.K9m0lpOy1W.jpg','actorIdIdActor':4},
+    {'idPelicula':180,'nombre':'ardillas','anioLanzamiento': 2002,'rating':70,'actoresPrincipales':'simon, teodoro y alvin','actorId':12,'urlFotoPelicula':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO38xZKsHTPD0zM7F80bfYwqkKgnQgtJkDqOosQNu7m-YEKJ42nQ','actorIdIdActor':1},
+    {'idPelicula':190,'nombre':'jefe en pañales','anioLanzamiento': 2018,'rating':95,'actoresPrincipales':'Bebe y linci','actorId':10,'urlFotoPelicula':'https://image.tmdb.org/t/p/original/bTFeSwh07oX99ofpDI4O2WkiFJ.jpg','actorIdIdActor':2},
+    {'idPelicula':210,'nombre':'happy Feet','anioLanzamiento': 2010,'rating':92,'actoresPrincipales':'Walle y Eva','actorId':8,'urlFotoPelicula':'http://www.1zoom.me/big2/25/82620-2006.jpg','actorIdIdActor':3},
 
 ];

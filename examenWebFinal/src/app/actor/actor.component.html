@@ -9,47 +9,49 @@
     <p class="titulo1">PETICION DE TRANSFERENCIA</p>
   </div>
   <div class="row">
-  <div class="col-sm-5">
-    <div class="card">
-      <div class="card-header">
-        <h1>Usuario</h1>
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-sm-5">
-            <img class="img-fluid" src="https://i1.wp.com/www.cullar.es/wp-content/uploads/2017/06/simbolo-de-usuario-negro-macho_318-60703.jpg" alt="No disponible">
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-header">
+          <h1>Usuario</h1>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-5">
+              <img class="img-fluid" src="https://i1.wp.com/www.cullar.es/wp-content/uploads/2017/06/simbolo-de-usuario-negro-macho_318-60703.jpg" alt="No disponible">
+            </div>
+            <div class="col-sm-7">
+              <h5 class="card-title"> Usuario: nelson.chicaiza@epn.edu.ec </h5>
+              <p class="card-text"></p>
+              <p class="card-text"></p>
+            </div>
           </div>
-          <div class="col-sm-7">
-            <h5 class="card-title"> Usuario: nelson.chicaiza@epn.edu.ec </h5>
-            <p class="card-text"></p>
-            <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-header">Actor</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-5">
+              <img class="img-fluid" [src]=actor[0].urlFotoActor alt="No disponible">
+            </div>
+            <div class="col-sm-7">
+              <h5 class="card-title">Nombre Actor: {{actor[0].nombres}} {{actor[0].apellidos}} </h5>
+              <p class="card-text">Numero Peliculas: {{actor[0].numeroPeliculas}}</p>
+              <p class="card-text">Retirado: {{actor[0].retirado}}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-2">
-
-  </div>
-
-  <div class="col-sm-5">
-    <div class="card">
-      <div class="card-header">Actor</div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-sm-5">
-            <img class="img-fluid" [src]=actor[0].urlFotoActor alt="No disponible">
-          </div>
-          <div class="col-sm-7">
-            <h5 class="card-title">Nombre Actor: {{actor[0].nombres}} {{actor[0].apellidos}} </h5>
-            <p class="card-text">Semestre Referencial: {{estudiante[0].semestreActual}}</p>
-            <p class="card-text">Graduado: {{estudiante[0].graduado}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-12"><br></div>
 
   <div class="col-sm-12">
     <div class="jumbotron jumbotron-fluid">
@@ -59,12 +61,12 @@
         <div class="row">
           <div class="col-sm-3" *ngFor="let pelicula of pelicula">
             <div class="card">
-              <div align="center"><img class="card-img-top img-fluid" [src]=pelicula.urlFotoMateria alt="Imagen pelicula"></div>
+              <div align="center"><img class="card-img-top img-fluid" [src]=pelicula.urlFotoMateria alt="Imagen Pelicula"></div>
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center">{{pelicula.codigo}} </h5>
+                <h5 class="card-title" style="text-align: center">{{pelicula.idPelicula}} </h5>
                 <p class="card-text">Nombre: {{pelicula.nombre}}</p>
-                <p class="card-text">Rating: {{pelicula.rating}}</p>
-                <p class="card-text">Sinopsis: {{pelicula.sinopsis}}</p>
+                <p class="card-text">Año Lanzamiento: {{pelicula.anioLanzamiento}}</p>
+                <p class="card-text">Actores Principales: {{pelicula.actoresPrincipales}}</p>
                 <a href="#" [routerLink]="['/actor',pelicula.id_pelicula,'pelicula',pelicula.id_pelicula]" class="btn btn-primary"> Transferencia</a>
               </div>
             </div>

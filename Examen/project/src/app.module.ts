@@ -16,11 +16,11 @@ import {UsuarioController} from "./usuario/usuario.controller";
 @Module({
   imports: [TypeOrmModule.forRoot({
         type: 'mysql',
-        host: 'web2018examen.mysql.database.azure.com',
+        host: 'web18aexamen.mysql.database.azure.com',
         port: 3306,
-        username: 'JorgeCarrillo@web2018examen',
-        password: 'Web2018A',
-        database: 'WebExamen',
+        username: 'nChicaiza@web18aexamen',
+        password: 'web2018A',
+        database: 'examenweb',
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
         ssl: true

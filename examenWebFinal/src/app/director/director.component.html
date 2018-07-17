@@ -14,7 +14,7 @@
       <h2 align="center">Actor</h2>
       <div class="card">
         <div class="card-header">
-          Nombre Actor: {{actor[0].nombres}}
+          Nombre Actor: {{actor[actor.id_actor].nombres}}
         </div>
         <div class="card-body">
           <div class="row">
@@ -43,7 +43,7 @@
             </div>
             <div class="col-sm-7">
               <h5 class="card-title">Rating: {{pelicula[0].rating}} </h5>
-              <p class="card-text">Sinopsis: {{pelicula[0].sinopsis}}</p>
+              <p class="card-text">Actores Principales: {{pelicula[0].actoresPrincipales}}</p>
               <p class="card-text">Anio Lanzamiento: {{pelicula[0].anioLanzamiento}}</p>
             </div>
           </div>
@@ -66,10 +66,10 @@
             <div class="card">
               <div align="center"><img class="card-img-top img-fluid" [src]=pelicula.urlFotoPelicula alt="Imagen Pelicula"></div>
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center">{{pelicula.codigo}} </h5>
+                <h5 class="card-title" style="text-align: center">{{pelicula.idPelicula }} </h5>
                 <p class="card-text">Nombre: {{pelicula.nombre}}</p>
                 <p class="card-text">rating: {{pelicula.rating}}</p>
-                <p class="card-text">Sinopsis: {{pelicula.sinopsis}}</p>
+                <p class="card-text">Anio Lanzamiento: {{pelicula.anioLanzamiento}}</p>
                 <a href="#" [routerLink]="['/transferencias']">Transferencia</a>
               </div>
             </div>

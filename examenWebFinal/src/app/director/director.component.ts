@@ -38,7 +38,7 @@ export class DirectorComponent implements OnInit {
   cargarActor(){
     this._activetedRoute.params.subscribe(parametros=>{
       this._parametros=parametros;
-      this._httpClient.get('http://localhost:3000/Estudiante/mostrarEstudiante?id='+this._parametros.idequipo)
+      this._httpClient.get('http://localhost:3000/Actor/mostrarActor?id='+this._parametros.idequipo)
         .subscribe(
           (res)=>{
             this.actor=res;

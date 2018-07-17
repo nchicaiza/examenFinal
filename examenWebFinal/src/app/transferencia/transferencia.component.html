@@ -1,3 +1,231 @@
-<p>
-  transferencia works!
-</p>
+<div class="row">
+
+  <div class="col-sm-12">
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+  <div class="col-sm-12" align="center">
+    <br>
+    <p class="h1">Perfil</p>
+  </div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 align="center">Usuario</h2>
+        <div class="card">
+          <div class="card-header">
+            Nombre Usuario: nelson.chicaiza@epn.edu.ec
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-5">
+                <img class="img-fluid" src="https://i1.wp.com/www.cullar.es/wp-content/uploads/2017/06/simbolo-de-usuario-negro-macho_318-60703.jpg" alt="No disponible">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+
+  <div class="col-sm-6">
+    <h1 align="center">Peticiones</h1>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <h2 align="center">Actor</h2>
+        <div class="card">
+          <div class="card-header">
+            Nombre Actor: {{actor[actor.id_actor].nombres}}
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-5">
+                <img class="img-fluid" [src]=actor[0].urlFotoActor alt="No disponible">
+              </div>
+              <div class="col-sm-7">
+                <h5 class="card-title">Fecha Nacimiento: {{estudiante[0].fechaNacimiento}} </h5>
+                <p class="card-text">Numero Peliculas: {{estudiante[0].numeroPeliculas}}</p>
+                <p class="card-text">Retirado: {{estudiante[0].retirado}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <p align="center"><h1 class="text-warning shake" >En Espera</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <div class="col-sm-5">
+          <h2 align="center">Pelicula </h2>
+          <div class="card">
+            <div class="card-header">
+              Pelicula: {{pelicula[0].nombre}}
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-5">
+                  <img class="img-fluid" [src]=pelicula[0].urlFotoPelicula alt="No disponible">
+                </div>
+                <div class="col-sm-7">
+                  <h5 class="card-title">Año Lanzamiento: {{pelicula[0].anioLanzamiento}} </h5>
+                  <p class="card-text">Actores Principales: {{pelicula[0].actoresPrincipales}}</p>
+                  <p class="card-text">Retirado: {{pelicula[0].retirado}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <p align="center"> <img src="https://image.flaticon.com/icons/svg/64/64496.svg"></p>
+        </div>
+        <div class="col-sm-5">
+          <h2 align="center">Pelicula </h2>
+          <div class="card">
+            <div class="card-header">
+              Pelicula: {{pelicula[3].nombre}}
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-5">
+                  <img class="img-fluid" [src]=pelicula[3].urlFotoPelicula alt="No disponible">
+                </div>
+                <div class="col-sm-7">
+                  <h5 class="card-title">Año Lanzamiento: {{pelicula[3].anioLanzamiento}} </h5>
+                  <p class="card-text">Actores Principales: {{pelicula[3].actoresPrincipales}}</p>
+                  <p class="card-text">Rating: {{pelicula[3].rating}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row" >
+      <div class="col-sm-12">
+        <h1 align="center">---o---</h1>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6" align="center">
+            <div class="row" align="center">
+              <div class="col-sm-12" align="center">
+                <button type="button" class="btn btn-success alert alert-waning">Aceptar</button>
+              </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"><h1></h1></div>
+            <div class="row"><h1></h1></div>
+            <div class="row"><h1></h1></div>
+            <div class="row"><h1></h1></div>
+            <div class="row"><h1></h1></div>
+            <div class="row"><h1></h1></div>
+            <div class="row" align="center">
+              <div class="col-sm-12" align="center">
+                <button type="button" class="btn btn-danger alert alert-waning">Rechazar</button>
+                <div class="alert alert-warning alert-dismissible fade show" >
+                  <strong *ngIf="button">Deseas Rechazar el Intercambio!</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <h2 align="center">Actor</h2>
+            <div class="card">
+              <div class="card-header">
+                Nombre Actor: {{actor[8].nombres}}
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <img class="img-fluid" [src]=actor[8].urlFotoActor alt="No disponible">
+                  </div>
+                  <div class="col-sm-7">
+                    <h5 class="card-title">Fecha Nacimiento: {{actor[8].fechaNacimiento}} </h5>
+                    <p class="card-text">Numero Peliculas: {{estudiante[8].numeroPeliculas}}</p>
+                    <p class="card-text">Retirado: {{pelicula[8].retirado}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="row">
+            <div class="col-sm-5">
+              <h2 align="center">Pelicula </h2>
+              <div class="card">
+                <div class="card-header">
+                  Pelicula: {{pelicula[5].nombre}}
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <img class="img-fluid" [src]=pelicula[5].urlFotoPeliculaalt="No disponible">
+                    </div>
+                    <div class="col-sm-7">
+                      <h5 class="card-title">Año Lanzamiento: {{pelicula[5].anioLanzamiento}} </h5>
+                      <p class="card-text">Actores Principales: {{pelicula[5].actoresPrincipales}}</p>
+                      <p class="card-text">Rating: {{pelicula[5].rating}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <p align="center"> <img src="https://image.flaticon.com/icons/svg/64/64496.svg"></p>
+            </div>
+            <div class="col-sm-5">
+              <h2 align="center">Pelicula </h2>
+              <div class="card">
+                <div class="card-header">
+                  Pelicula: {{pelicula[10].nombre}}
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <img class="img-fluid" [src]=pelicula[10].urlFotoPelicula alt="No disponible">
+                    </div>
+                    <div class="col-sm-7">
+                      <h5 class="card-title">Año Lanzamiento: {{pelicula[10].anioLanzamiento}} </h5>
+                      <p class="card-text">Actores Principales: {{pelicula[10].actoresPrincipales}}</p>
+                      <p class="card-text">Rating: {{pelicula[10].rating}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

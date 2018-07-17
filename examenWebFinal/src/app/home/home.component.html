@@ -83,10 +83,10 @@
                 <div class="card" [routerLink]="['/actor',actor.id_actor]">
                   <div align="center" ><img class="card-img-top img-fluid" style="width: 50%" [src]="estudiante.urlFotoEstudiante" height="200" width="200" alt="Card image cap"></div>
                   <div class="card-body">
-                    <h5 class="card-title" style="text-align: center">{{estudiante.nombres}} {{estudiante.apellidos}}
+                    <h5 class="card-title" style="text-align: center">{{actor.nombres}} {{actor.apellidos}}
                     </h5>
-                    <p class="card-text">Semestre Actual: {{estudiante.semestreActual}}</p>
-                    <p class="card-text">Graduado: {{estudiante.graduado}}</p>
+                    <p class="card-text">Numero Peliculas: {{actor.numeroPeliculas}}</p>
+                    <p class="card-text">Retirado: {{actor.retirado}}</p>
                   </div>
                 </div>
               </div>
@@ -102,9 +102,9 @@
                   <div class="card" [routerLink]="['/estudiante',estudiante.id_estudiante]">
                     <div align="center"><img class="card-img-top img-fluid" style="width: 50%" [src]="estudiante.urlFotoEstudiante" alt="Card image cap"></div>
 
-                    <h5 class="card-title" style="text-align: center">{{estudiante.nombres}} {{estudiante.apellidos}} </h5>
-                    <p class="card-text">Semestre Actual: {{estudiante.semestreActual}}</p>
-                    <p class="card-text">Graduado: {{estudiante.graduado}}</p>
+                    <h5 class="card-title" style="text-align: center">{{actor.nombres}} {{actor.apellidos}} </h5>
+                    <p class="card-text">Numero Peliculas: {{actor.numeroPeliculas}}</p>
+                    <p class="card-text">Retirado: {{actor.retirado}}</p>
                   </div>
                 </div>
               </div>
@@ -136,10 +136,10 @@
                 <div class="card" [routerLink]="['/materia',materia.id_materia]">
                   <div align="center" height="200" width="200"><img class="card-img-top img-fluid" style="width: 50%" [src]="materia.urlFotoMateria" height="200" width="200" alt="Card image cap"></div>
                   <div class="card-body">
-                    <h5 class="card-title" style="text-align: center">{{materia.nombre}}
-                      <p class="card-title">Codigo: {{materia.codigo}}</p>
-                      <p class="card-title">Descripcion: {{materia.descripcion}}</p>
-                      <p class="card-title">Numero Horas: {{materia.numeroHorasSemana}}</p>
+                    <h5 class="card-title" style="text-align: center">{{pelicula.nombre}}
+                      <p class="card-title">idPelicula: {{{{pelicula.idPelicula}}}}</p>
+                      <p class="card-title">Actores Principales: {{pelicula.actoresPrincipales}}</p>
+                      <p class="card-title">Anio Lanzamiento: {{pelicula.anioLanzamiento}}</p>
                     </h5>
                   </div>
                 </div>
@@ -156,10 +156,10 @@
                   <div class="card" [routerLink]="['/materia',materia.id_materia]">
                     <div align="center"><img class="card-img-top img-fluid" style="width: 50%" [src]="materia.urlFotoMateria" alt="Card image cap"></div>
 
-                    <h5 class="card-title" style="text-align: center">{{materia.nombre}} </h5>
-                    <p class="card-title">Nombre: {{materia.codigo}}</p>
-                    <p class="card-title">Descripcion: {{materia.descripcion}}</p>
-                    <p class="card-title">Numero Horas: {{materia.numeroHorasSemana}}</p>
+                    <h5 class="card-title" style="text-align: center">{{pelicula.nombre}} </h5>
+                    <p class="card-title">idPelicula: {{pelicula.idPelicula}}</p>
+                    <p class="card-title">Actores Principales: {{pelicula.actoresPrincipales}}</p>
+                    <p class="card-title">Anio Lanzamiento: {{pelicula.anioLanzamiento}}</p>
                   </div>
                 </div>
               </div>
